@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bendición para el Matrimonio</title>
+  <style>
+    :root {
+      --bg: #faf8f5;
+      --card-bg: #ffffff;
+      --text: #2f2a29;
+      --accent: #b89758;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--bg);
+      font-family: 'Georgia', serif;
+      padding: 1.5rem;
+      box-sizing: border-box;
+    }
+    .card {
+      background: var(--card-bg);
+      max-width: 480px;
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      text-align: center;
+      border: 1px solid rgba(184, 151, 88, 0.2);
+    }
+    .quote {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      color: var(--text);
+      font-style: italic;
+      margin-bottom: 1.2rem;
+    }
+    .citation {
+      font-size: 0.95rem;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <p class="quote" id="phrase-text">Cargando bendición...</p>
+    <div class="citation" id="phrase-ref"></div>
+  </div>
+
+  <script>
+    const quotes = [
+      { text: "El amor es paciente, es bondadoso; no tiene envidia; el amor no es jactancioso, no se envanece.", ref: "1 Corintios 13:4" },
+      { text: "Y sobre todas estas cosas vestíos de amor, que es el vínculo perfecto.", ref: "Colosenses 3:14" },
+      { text: "Mejores son dos que uno; porque tienen mejor paga de su trabajo.", ref: "Eclesiastés 4:9" },
+      { text: "Por encima de todo, ámense profundamente unos a otros, porque el amor cubre multitud de pecados.", ref: "1 Pedro 4:8" },
+      { text: "El Señor te bendiga y te guarde; el Señor haga resplandecer su rostro sobre ti y tenga de ti misericordia.", ref: "Números 6:24-25" }
+      // Agregá aquí el resto de tus 20 frases
+    ];
+
+    const random = quotes[Math.floor(Math.random() * quotes.length)];
+    document.getElementById("phrase-text").textContent = `“${random.text}”`;
+    document.getElementById("phrase-ref").textContent = random.ref;
+  </script>
+</body>
+</html>
